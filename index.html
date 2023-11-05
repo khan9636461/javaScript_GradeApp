@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GradeApp</title>
+</head>
+
+<body>
+    <h1>es6 Conditions checking with if statement</h1>
+
+    <form onsubmit="gradeCheck(event)">
+        Enter Your Grade:
+        <input id="gradeInput" type="number" required step="0.01">
+        <br>
+        <button>checkGrade</button>
+    </form>
+
+    <h1 id="resultWindow"></h1>
+
+    <script>
+        function gradeCheck(event) {
+            event.preventDefault();
+            let gradeInput = document.querySelector("#gradeInput").value;
+            let grade = Number(gradeInput);
+
+            console.log(grade);
+
+            let message = " ";
+
+            if (grade >= 90) {
+                message = "Got Grade A+";
+                console.log("Got Grade A= ");
+            } else if (grade >= 85) {
+                message = "Got Grade A";
+                console.log("Got Grade A ");
+            } else if (grade >= 80) {
+                message = "Got Grade B+";
+                console.log("Got Grade B+ ");
+            } else if (grade >= 75) {
+                message = "Got Grade B";
+                console.log("Got Grade B ");
+            } else if (grade >= 70) {
+                message = "Got Grade C+";
+                console.log("Got Grade C+ ");
+            } else if (grade >= 65) {
+                message = "Got Grade C";
+                console.log("Got Grade C ");
+            } else if (grade >= 60) {
+                message = "Got Grade D+";
+                console.log("Got Grade D+ ");
+            } else if (grade >= 50) {
+                message = "Got Grade D";
+                console.log("Got Grade D ");
+            } else {
+                message = "Try For Next Time";
+                console.log("Try For Next Time ");
+            }
+            document.querySelector("#resultWindow").innerHTML = message;
+        }
+    </script>
+</body>
+</html>
